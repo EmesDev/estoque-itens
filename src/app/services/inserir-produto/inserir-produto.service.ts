@@ -26,7 +26,7 @@ createItem(data: any): Observable<any> {
 buscarItens(): Observable<any> {
   const url = `${this.apiUrl}/selItens`;
   console.log()
-  return this.http.get<any>('https://api.pexels.com/v1/search?query=people', this.httpOptions);
+  return this.http.get<any>(url, this.httpOptions);
 }
 
 // getImagens(): Observable<any> {
