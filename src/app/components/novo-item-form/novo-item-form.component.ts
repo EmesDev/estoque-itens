@@ -33,7 +33,9 @@ export class NovoItemFormComponent implements OnInit {
   onSubmit() {
     // aqui você pode implementar a logica para fazer seu formulário salvar
     console.log(this.formItens.value);
-    this.service.createItem(this.formItens.value);
+    this.service.createItem(this.formItens.value).subscribe(response => {
+      console.log('Item criado com sucesso:', response);
+    })
 
     // Usar o método reset para limpar os controles na tela
     this.formItens.reset(new Itens());

@@ -65,10 +65,14 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "estoque-tinta:build:production"
+              "browserTarget": "estoque-tinta:build:production",
+              "proxyConfig": "proxy.conf.json"
+
             },
             "development": {
-              "browserTarget": "estoque-tinta:build:development"
+              "browserTarget": "estoque-tinta:build:development",
+              "proxyConfig": "proxy.conf.json"
+
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +80,9 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "estoque-tinta:build"
+            "browserTarget": "estoque-tinta:build",
+            "proxyConfig": "proxy.conf.json"
+
           }
         },
         "test": {

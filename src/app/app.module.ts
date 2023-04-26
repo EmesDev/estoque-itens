@@ -9,6 +9,7 @@ import { EstoqueComponent } from './page/estoque/estoque.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NovoItemFormComponent } from './components/novo-item-form/novo-item-form.component';
+import { InserirProdutoService } from './services/inserir-produto/inserir-produto.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { NovoItemFormComponent } from './components/novo-item-form/novo-item-for
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [InserirProdutoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

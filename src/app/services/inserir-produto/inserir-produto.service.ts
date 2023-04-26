@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Itens } from 'src/app/shared/itens';
 
 @Injectable({
   providedIn: 'root'
@@ -21,13 +20,13 @@ export class InserirProdutoService {
 createItem(data: any): Observable<any> {
   const url = `${this.apiUrl}/novoItem`;
   console.log(data)
-  return this.http.post<any>(url, this.httpOptions, data);
+  return this.http.post<any>(url, data, this.httpOptions );
 }
 
 buscarItens(): Observable<any> {
   const url = `${this.apiUrl}/selItens`;
   console.log()
-  return this.http.get<any>(url, this.httpOptions);
+  return this.http.get<any>('https://api.pexels.com/v1/search?query=people', this.httpOptions);
 }
 
 // getImagens(): Observable<any> {
