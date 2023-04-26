@@ -5,20 +5,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './compoents/navbar/navbar.component';
 import { HomeComponent } from './page/home/home.component';
-import { AddItensComponent } from './compoents/add-itens/add-itens.component';
 import { EstoqueComponent } from './page/estoque/estoque.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NovoItemFormComponent } from './components/novo-item-form/novo-item-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
-    AddItensComponent,
-    EstoqueComponent
+    EstoqueComponent,
+    NovoItemFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
