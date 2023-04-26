@@ -21,6 +21,7 @@ import { NovoItemFormComponent } from './components/novo-item-form/novo-item-for
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule
   ],
   providers: [],
