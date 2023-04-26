@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NovoItemFormComponent } from './components/novo-item-form/novo-item-form.component';
 import { InserirProdutoService } from './services/inserir-produto/inserir-produto.service';
+import { CardsEstoqueComponent } from './components/cards-estoque/cards-estoque.component';
+import { ItemListComponent } from './components/item-list/item-list.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { InserirProdutoService } from './services/inserir-produto/inserir-produt
     NavbarComponent,
     HomeComponent,
     EstoqueComponent,
-    NovoItemFormComponent
+    NovoItemFormComponent,
+    CardsEstoqueComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,
