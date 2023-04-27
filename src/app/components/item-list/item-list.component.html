@@ -18,8 +18,18 @@
                             <div class="col-md-3 d-flex align-items-center justify-content-center">
                                 <p style="font-family: 'Roboto', sans-serif;">Quantidade: {{ item.itemQuantidade }}</p>
                             </div>
-                            <div class="col-md-3 d-flex align-items-center justify-content-center">
-                                <p style="font-family: 'Roboto', sans-serif;">{{ item.itemStatus }} </p>
+                            <div class="col-md-2 d-flex align-items-center justify-content-center">
+                                <p style="font-family: 'Roboto', sans-serif; text-transform: uppercase;">
+                                <strong [ngClass]="{'text-success': item.itemStatus === 'Em Estoque', 'text-danger': item.itemStatus === 'Sem Estoque'}">
+                                    {{ item.itemStatus }} </strong> </p> 
+                            </div>
+                            <div class="col-md-1 d-flex align-items-center justify-content-center">
+                                <button type="button" class="btn btn-sm btn-primary me-1">
+                                    <i class="bi bi-pencil-square"></i>
+                                </button>
+                                <button type="button" class="btn btn-sm btn-danger" (click)="deleteItem(item)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
                             </div>
                         </div>
                     </li>
@@ -28,8 +38,3 @@
         </div>
     </div>
 </div>
-
-
-
-
-

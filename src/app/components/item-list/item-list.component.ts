@@ -8,26 +8,30 @@ import { Itens } from 'src/app/shared/itens';
   styleUrls: ['./item-list.component.scss']
 })
 export class ItemListComponent implements OnInit {
-  items: any ;
+  items: any;
 
   constructor(private service: InserirProdutoService) { }
 
   ngOnInit() {
     this.buscarItens();
 
-  
+
   }
 
 
-  buscarItens(){
-    this.service.buscarItens().subscribe(items =>{
+  buscarItens() {
+    this.service.buscarItens().subscribe(items => {
       console.log(items)
       console.log('dwa')
       this.items = items
     })
-
-    
-
   }
- 
+
+  deleteItem(item: any) {
+    console.log(item.idItem)
+    const index = this.items.indexOf(item);
+    console.log(index)
+    this.items.splice(index, 1);
+  }
+
 }

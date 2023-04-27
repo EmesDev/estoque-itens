@@ -1,3 +1,21 @@
 // #itemNome{
 //     margin-left: rem;
 // }
+
+ /* Personalização dos ícones */
+    .bi {
+        font-size: 1.1rem;
+    }
+
+    /* Personalização dos botões */
+    .btn-primary, .btn-danger {
+        padding: .5rem .75rem;
+        margin-right: 1.5rem;
+        transition: all .3s ease;
+    }
+
+    .btn-primary:hover, .btn-danger:hover {
+        transform: scale(1.07);
+        opacity: .8;
+        box-shadow: none;
+    }
