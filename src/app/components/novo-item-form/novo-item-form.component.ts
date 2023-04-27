@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { InserirProdutoService } from 'src/app/services/inserir-produto/inserir-produto.service';
 import { Itens } from 'src/app/shared/itens';
@@ -10,14 +10,14 @@ import { Itens } from 'src/app/shared/itens';
   styleUrls: ['./novo-item-form.component.scss']
 })
 export class NovoItemFormComponent implements OnInit {
+
   formItens!: FormGroup;
 
   constructor(private service: InserirProdutoService) { }
 
   ngOnInit() {
     this.createForm(new Itens());
-   let a = this.service.buscarItens();
-   console.log(a);
+
   }
   
 
@@ -33,13 +33,14 @@ export class NovoItemFormComponent implements OnInit {
   onSubmit() {
     // aqui você pode implementar a logica para fazer seu formulário salvar
     console.log(this.formItens.value);
-    if (this.formItens.invalid) {
+    if (!this.formItens.invalid) {
       this.service.createItem(this.formItens.value).subscribe(response => {
         console.log('Item criado com sucesso:', response);
+        location.reload()
       })
   
       // Usar o método reset para limpar os controles na tela
-      this.formItens.reset(new Itens());;
+      this.formItens.reset(new Itens());
     }
     
   }

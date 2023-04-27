@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Itens } from 'src/app/shared/itens';
 
 @Injectable({
   providedIn: 'root'
@@ -17,6 +18,7 @@ export class InserirProdutoService {
 
 
 
+
 createItem(data: any): Observable<any> {
   const url = `${this.apiUrl}/novoItem`;
   console.log(data)
@@ -26,18 +28,18 @@ createItem(data: any): Observable<any> {
 buscarItens(): Observable<any> {
   const url = `${this.apiUrl}/selItens`;
   console.log()
-  return this.http.get<any>(url, this.httpOptions);
+  return this.http.get<any>(url, this.httpOptions).pipe();
 }
 
-// getImagens(): Observable<any> {
-//   const headers = new HttpHeaders({
-//     'Authorization': `${this.key}`
-//   })
+quantidadeItens(): Observable<any> {
+  const url = `${this.apiUrl}/selQtEstoque`;
+  console.log()
+  return this.http.get<any>(url, this.httpOptions).pipe();
+}
 
-//   const requestOptions = { headers: headers }
-
-//   return this.httpClient.get<any>('https://api.pexels.com/v1/curated?per_page=40', requestOptions)
-//     .pipe()
-
-// }
+quantidadeStatus(): Observable<any> {
+  const url = `${this.apiUrl}/selQtStatus`;
+  console.log()
+  return this.http.get<any>(url, this.httpOptions).pipe();
+}
 }
