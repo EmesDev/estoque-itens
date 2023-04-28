@@ -21,16 +21,19 @@ export class ItemListComponent implements OnInit {
 
   buscarItens() {
     this.service.buscarItens().subscribe(items => {
-      console.log(items)
-      console.log('dwa')
       this.items = items
     })
   }
 
   deleteItem(item: any) {
-    console.log(item.idItem)
     const index = this.items.indexOf(item);
-    console.log(index)
+
+    const data = {
+      "idItem": item.idItem
+    }
+    this.service.deletarItem(data).subscribe(response => {
+      location.reload()
+    })
     this.items.splice(index, 1);
   }
 

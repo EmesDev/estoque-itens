@@ -31,28 +31,17 @@ export class CardsEstoqueComponent implements OnInit {
 
   buscarQuantidadeItens(){
     this.service.quantidadeItens().subscribe(quantidade =>{
-      console.log(quantidade[0].quantidade)
-      console.log('dwa')
       this.quantidade = quantidade[0].quantidade
     })
   }
 
   buscarQuantidadeEmEstoque(){
     this.service.quantidadeStatus().subscribe(emEstoque =>{
-      console.log(emEstoque[0].itemStatus)
-      console.log('dwa')
       this.emEstoque = emEstoque[0].emEstoque
       this.semEstoque = emEstoque[0].semEstoque
     })
   }
 
-  // buscarQuantidadeSemEstoque(){
-  //   this.service.quantidadeStatus("Sem Estoque").subscribe(semEstoque =>{
-  //     console.log(semEstoque[0].itemStatus)
-  //     console.log('dwa')
-  //     this.semEstoque = semEstoque[0].itemStatus
-  //   })
-  // }
 
     
 

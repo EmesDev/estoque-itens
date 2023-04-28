@@ -1,5 +1,5 @@
 export class Itens {
     itemNome: string = '';
-    ItemDescricao: string = '';
+    itemDescricao: string = '';
     itemQuantidade: number = 0;
 }

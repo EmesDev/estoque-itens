@@ -11,7 +11,7 @@ export class InserirProdutoService {
 
   constructor(private http: HttpClient) { }
 
-  
+
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   }
@@ -19,27 +19,29 @@ export class InserirProdutoService {
 
 
 
-createItem(data: any): Observable<any> {
-  const url = `${this.apiUrl}/novoItem`;
-  console.log(data)
-  return this.http.post<any>(url, data, this.httpOptions );
-}
+  createItem(data: any): Observable<any> {
+    const url = `${this.apiUrl}/novoItem`;
+    return this.http.post<any>(url, data, this.httpOptions);
+  }
 
-buscarItens(): Observable<any> {
-  const url = `${this.apiUrl}/selItens`;
-  console.log()
-  return this.http.get<any>(url, this.httpOptions).pipe();
-}
+  buscarItens(): Observable<any> {
+    const url = `${this.apiUrl}/selItens`;
+    return this.http.get<any>(url, this.httpOptions).pipe();
+  }
 
-quantidadeItens(): Observable<any> {
-  const url = `${this.apiUrl}/selQtEstoque`;
-  console.log()
-  return this.http.get<any>(url, this.httpOptions).pipe();
-}
+  quantidadeItens(): Observable<any> {
+    const url = `${this.apiUrl}/selQtEstoque`;
+    return this.http.get<any>(url, this.httpOptions).pipe();
+  }
 
-quantidadeStatus(): Observable<any> {
-  const url = `${this.apiUrl}/selQtStatus`;
-  console.log()
-  return this.http.get<any>(url, this.httpOptions).pipe();
-}
+  quantidadeStatus(): Observable<any> {
+    const url = `${this.apiUrl}/selQtStatus`;
+    return this.http.get<any>(url, this.httpOptions).pipe();
+  }
+
+
+  deletarItem(data: any): Observable<any> {
+    const url = `${this.apiUrl}/delItem`;
+    return this.http.post<any>(url, data , this.httpOptions).pipe();
+  }
 }
