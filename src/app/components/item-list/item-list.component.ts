@@ -51,7 +51,7 @@ export class ItemListComponent implements OnInit {
       itemDescricao: contents[1],
       itemQuantidade: +contents[2],
     }
-
+//coment
     this.service.atualizarItem(item).subscribe(response => {
       console.log('Item criado com sucesso:', response);
       location.reload()
