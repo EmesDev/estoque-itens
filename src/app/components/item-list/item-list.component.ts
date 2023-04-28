@@ -14,10 +14,7 @@ export class ItemListComponent implements OnInit {
 
   ngOnInit() {
     this.buscarItens();
-
-
   }
-
 
   buscarItens() {
     this.service.buscarItens().subscribe(items => {
@@ -36,5 +33,32 @@ export class ItemListComponent implements OnInit {
     })
     this.items.splice(index, 1);
   }
+
+  editarItem(itens: any) {
+
+    const editableElements = document.querySelectorAll('[contentEditable]');
+    let contents: any[] = [];
+
+    editableElements.forEach(element => {
+      const content = element.textContent;
+
+      contents = contents.concat(content);
+    })
+
+    let item: Itens = {
+      idItem: itens.idItem,
+      itemNome: contents[0],
+      itemDescricao: contents[1],
+      itemQuantidade: +contents[2],
+    }
+
+    this.service.atualizarItem(item).subscribe(response => {
+      console.log('Item criado com sucesso:', response);
+      location.reload()
+    })
+    console.log(item);
+
+  }
+
 
 }

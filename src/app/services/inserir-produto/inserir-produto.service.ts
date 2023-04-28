@@ -44,4 +44,9 @@ export class InserirProdutoService {
     const url = `${this.apiUrl}/delItem`;
     return this.http.post<any>(url, data , this.httpOptions).pipe();
   }
+
+  atualizarItem(data: any): Observable<any> {
+    const url = `${this.apiUrl}/uptItem`;
+    return this.http.post<any>(url, data , this.httpOptions).pipe();
+  }
 }
