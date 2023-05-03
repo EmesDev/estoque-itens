@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './compoents/navbar/navbar.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './page/home/home.component';
 import { EstoqueComponent } from './page/estoque/estoque.component';
 import { HttpClientModule } from '@angular/common/http';
