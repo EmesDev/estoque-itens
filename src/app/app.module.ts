@@ -21,15 +21,10 @@ import { ItemListComponent } from './components/item-list/item-list.component';
     EstoqueComponent,
     NovoItemFormComponent,
     CardsEstoqueComponent,
-    ItemListComponent
+    ItemListComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule],
   providers: [InserirProdutoService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

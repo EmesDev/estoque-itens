@@ -4,20 +4,16 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Itens } from 'src/app/shared/itens';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InserirProdutoService {
   private apiUrl = 'http://localhost:4000';
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient) {}
 
   httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-  }
-
-
-
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+  };
 
   createItem(data: any): Observable<any> {
     const url = `${this.apiUrl}/novoItem`;
@@ -39,14 +35,13 @@ export class InserirProdutoService {
     return this.http.get<any>(url, this.httpOptions).pipe();
   }
 
-
   deletarItem(data: any): Observable<any> {
     const url = `${this.apiUrl}/delItem`;
-    return this.http.post<any>(url, data , this.httpOptions).pipe();
+    return this.http.post<any>(url, data, this.httpOptions).pipe();
   }
 
   atualizarItem(data: any): Observable<any> {
     const url = `${this.apiUrl}/uptItem`;
-    return this.http.post<any>(url, data , this.httpOptions).pipe();
+    return this.http.post<any>(url, data, this.httpOptions).pipe();
   }
 }
