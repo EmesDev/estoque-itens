@@ -8,9 +8,8 @@ describe('NovoItemFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NovoItemFormComponent ]
-    })
-    .compileComponents();
+      declarations: [NovoItemFormComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(NovoItemFormComponent);
     component = fixture.componentInstance;
